@@ -1,0 +1,13 @@
+parcel 검색
+https://ko.parceljs.org/
+https://ko.parceljs.org/getting_started.html
+
+커맨드 라인 인터페이스(CLI)
+https://ko.parceljs.org/cli.html
+단어로 명령을 입력하는거
+
+
+포트번호 변경
+"scripts": {
+    "dev": "parcel index.html --port 1216",
+  },

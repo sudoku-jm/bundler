@@ -1,0 +1,19 @@
+parcel plugin static files copy
+
+https://www.npmjs.com/package/parcel-plugin-static-files-copy
+
+npm i -D parcel-plugin-static-files-copy
+
+// package.json
+"devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-static-files-copy": "^2.6.0",        //생성
+    "sass": "^1.45.1"
+  },
+  //추가
+  "staticFiles": {
+    "staticPath": "static"
+  }
+
+static 폴더 생성 안에 파비콘 파일 넣음.
+static안에있는 파일은 dist 폴더 안에 들어감.

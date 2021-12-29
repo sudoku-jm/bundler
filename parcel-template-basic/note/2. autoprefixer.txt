@@ -1,0 +1,67 @@
+autoprefixer ?
+
+css 벤더사 표기.
+-webkit-
+-o-
+-ms-
+등..이 붙어서 사용자 구형 브라우저에서 동작할 수 있게 함.
+Vender prefix
+일일이 외워서 쓰기 어려우니 자동으로 붙여주는 패키지.
+postcss랑 autoprefixer 2개의 패키지 설치
+
+npm i -D postcss autoprefixer
+
+한 번에 2개 패키지 설치
+
+
+//자동으로 package.json에 들어감
+"devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "postcss": "^8.4.5",
+    "sass": "^1.45.1"
+  },
+
+
+//하단 추가
+"browserslist" : [
+    "> 1%",
+    "last 2 versions"
+]
+
+뜻?
+브라우저리스트 옵션통해 전세계 점유율 1%이상인 모든 브라우저,
+해당하는 브라우저 마지막 2개 버전까지는 전부 지원하겠다.
+공급업체 접두사 붙여준다.
+
+
+//추가
+.postcssrc.js 추가
+파일명 앞에 . 붙는건 구성파일이나 숨김파일을 의미한다.
+
+
+//ESM 방식
+import autoprefixer from 'autoprefixer'
+export{
+    plugins: [
+        autoprefixer
+    ]
+}
+
+//CommonJS 방식
+const autoprefixer = require('autoprefixer')
+
+
+module.exports = {
+    plugins: [
+        autoprefixer
+    ]
+}
+
+//CommonJS 간소화
+module.exports = {
+    plugins: [
+      require('autoprefixer')
+    ]
+  }

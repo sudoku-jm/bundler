@@ -1,0 +1,55 @@
+Babel은 ECMAScript 2015+ 코드를 이전 JavaScript 엔진에서 실행할 수 있는 이전 버전과 호환되는 JavaScript 버전으로 변환하는 데 주로 사용되는 무료 오픈 소스 JavaScript 트랜스컴파일러
+
+ES : 자바스크립트 표준
+ES6 (2015년 나온것)과 구형(ES5) 브라우저와 호환될 수 있게끔 컴파일 시켜준다.
+
+@babel/core
+@bable/preset-env
+2개의 패키지 설치
+
+npm i -D @babel/core 
+npm i -D @bable/preset-env
+
+
+.babelrc.js 추가
+
+module.exports = {
+    presets : ['@babel/preset-env']
+  }
+
+
+//해당사항있는지 확인
+"browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+
+
+
+
+main.js 작성
+
+//async 비동기함수
+async function test() {
+    const promise = Promise.resolve(123)
+    console.log(await promise)
+}
+
+test()
+
+
+
+>npm i -D @babel/plugin-transform-runtime
+
+
+.babelrc.js파일
+
+module.exports = {
+    presets : ['@babel/preset-env'],
+    plugins : [
+        ['@babel/plugin-transform-runtime']
+    ]
+  }
+
+
+main.js console 정상동작 확인
